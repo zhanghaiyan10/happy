@@ -1,0 +1,44 @@
+<!--<h1>
+  {{greeting}}
+</h1>-->
+
+<div class="container" style="width:300px">
+  <div class="panel panel-default">
+      <div class="panel-body">
+          <div class="row" *ngFor="let detail of details">
+              <div class="col-sm-12" style="width:300px;height:150px;overflow:hidden; position:relative">
+                  <img src={{detail.img}}>
+                  <span style="background-color:white;float:left;position:absolute;left:20px;bottom:20px;font-size:12px">
+                    现货
+                  </span>
+                  <span style="background-color:white;float:left;position:absolute;right:20px;bottom:20px;font-size:12px;border-radius:20px">
+                      1/1
+                    </span>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-12" style="text-align:center">
+                <div *ngFor="let detail of details" >
+                      <h3>{{detail.title}}</h3>
+                      <h5 style="color:red">￥{{detail.price}}</h5> 
+                      <span>货号:{{detail.num}} 品牌:{{detail.brand}}</span> 
+                      <h4>商品信息</h4>
+                      <div style="text-align:left">
+                         <span>颜色:</span> <span >{{detail.color}}</span>  
+                          <p>尺码：S M L  </p>
+                      </div>    		
+                </div>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-12">
+                  <form role="form">
+                      <button type="button" class="btn btn-success" (click)="showDetail()" >立即购买</button>
+                  </form>
+              </div>
+          </div>
+          
+      </div>
+  </div>
+  <order-component *ngIf="isShowMore"></order-component>
+</div>

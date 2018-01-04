@@ -1,0 +1,18 @@
+<div class="container">
+    <p style="overflow:hidden">
+            <span style="float:left">立即下单</span>
+            <span style="float:right" *ngFor="let order of orders">单价：{{order.price}}</span>
+    </p>
+   
+   <form>
+       <div *ngFor="let order of orders">
+            <div *ngFor="let sum of order.sums" class="cal" >
+                <p><span>{{sum.yanse}}</span><input value={{sum.size.s}} (focus)="onFocus()" (blur)=onBlur()/><input value={{sum.size.m}} (focus)="onFocus()" (blur)=onBlur() /><input value={{sum.size.l}} (focus)="onFocus()" (blur)=onBlur()/></p>
+                </div>
+                <p>数量：<label >0</label><br/>总价：<span id="total">{{order.price*sums}}</span></p>
+               
+       </div>
+       <button id="submit" (click)="tijiao()" style="background-color:grey">立即下单</button>
+   </form>
+  
+</div>
